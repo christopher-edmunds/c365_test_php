@@ -12,12 +12,14 @@
     
          
     <input type="text"  class="form-control" name="name" placeholder="Enter your name" value="{{ old('name')}}" required>
-     </div>
+     @if ($errors->has('name')) <div class="help-block cs-error">Sorry you have entered an invalid name</div> @endif
+            </div>
   
      <div class="form-group {{ $errors->has('start_date') ? ' has-error' : '' }}">
     
          
-    <input type="text"  class="form-control datepicker" id="datepicker" name="date_of_birth" placeholder="Enter Date of Birth" value="{{ old('start_date')}}" required>
+    <input type="text"  class="form-control datepicker" id="datepicker" name="date_of_birth" placeholder="Enter Date of Birth" value="{{ old('date_of_birth')}}" required>
+     @if ($errors->has('date_of_birth')) <div class="help-block cs-error">Sorry you have entered an incorrect date format. Please use dd/mm/yyyy</div> @endif
      </div>
   
         <p><button class="btn btn-lg btn-success" type='submit'>Enter</button></p
