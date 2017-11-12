@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "AgeController@index");
+Route::post('/', "AgeController@calculate");
