@@ -5,6 +5,12 @@
         <h1>What's your age!</h1>
         
         <p class="lead">Enter your date of birth including hours to work our your date of birth accurate to number of hours</p>
+        @if(!empty($age_message)) 
+        <div class="alert alert-success">
+            <p>{{$age_message}}</p>
+            
+        </div>
+        @endif
         <form action="/" method="post">
             {{ csrf_field() }}
      
@@ -33,7 +39,7 @@
 
 <script>
   $( function() {
-    $( "#datepicker" ).datetimepicker({format: "d-m-Y H:i"});
+    $( "#datepicker" ).datetimepicker({format: "Y-m-d H:i"});
   } );
  </script>
 @endsection

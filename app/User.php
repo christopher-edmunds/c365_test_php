@@ -2,11 +2,11 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User
-{
-    use Notifiable;
+class User extends Model {
+
+
 
     /**
      * The attributes that are mass assignable.
@@ -16,6 +16,13 @@ class User
     protected $fillable = [
         'name', 'date_of_birth',
     ];
+    
+    //Function to store a user
+    public function storeUser(array $params) {
+        $this->name = $params['name'];
+        $this->date_of_birth = $params['date_of_birth'];
+        $this->save();
+    }
 
     
 }

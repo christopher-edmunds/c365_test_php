@@ -24,9 +24,11 @@ class AgeCalculator implements AgeCalculatorInterface {
     $diff = date_diff(date_create($date_of_birth), date_create($today));
     
     //Store in class level variables
-    $this->year = $diff->format('%y');
+    $this->years = $diff->format('%y');
     $this->days = $diff->format('%d');
     $this->hours = $diff->format('%H');
+    
+    return $this->getAge();
     
     }
     
@@ -42,6 +44,10 @@ class AgeCalculator implements AgeCalculatorInterface {
     
     public function getHours() {
         return $this->hours;
+    }
+    
+    private function getAge() {
+        return $this->getYears()." years, ".$this->getDays()." days, ".$this->getHours()." hours old";
     }
     
     
