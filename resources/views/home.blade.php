@@ -31,6 +31,22 @@
         <p><button class="btn btn-lg btn-success" type='submit'>Enter</button></p
         </form>
         </div>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h4 class="text-center">Previous submissions</h4>
+        <table class="table table-striped table-responsive">
+            <tr>
+                <th><strong>Name</strong></th><th><strong>Age</strong></th>
+                
+            </tr>
+            @foreach($users as $user)
+            <tr><td>{{$user->name}}</td><td>{{$age_calculator->calculateAge($user->date_of_birth)}}</td></tr>
+            @endforeach
+        </table>
+    </div>
+    
+</div>
+
 
       
 @endsection
