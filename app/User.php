@@ -17,7 +17,11 @@ class User extends Model {
         'name', 'date_of_birth',
     ];
     
-    //Function to store a user
+    /**
+     * Store user
+     *
+     * @return void
+     */
     public function storeUser(array $params) {
         $this->name = $params['name'];
         $this->date_of_birth = $params['date_of_birth'];

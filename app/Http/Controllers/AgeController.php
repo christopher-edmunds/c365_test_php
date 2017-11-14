@@ -36,7 +36,8 @@ class AgeController extends Controller {
     /**
      * Calculate the age.
      *
-     * @return view
+     * @param AgeRequest request
+     * @return redirect
      */
     public function calculate(AgeRequest $request)
     {
