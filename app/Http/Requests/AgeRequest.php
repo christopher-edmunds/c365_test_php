@@ -26,7 +26,7 @@ class AgeRequest extends FormRequest
         return [
             //Validate on name and date of birth
             'name'    => 'required|string',
-            'date_of_birth' => 'date_format:"d/m/Y"|required'
+            'date_of_birth' => 'date_format:"d-m-Y H:i"|required'
         ];
     }
 }

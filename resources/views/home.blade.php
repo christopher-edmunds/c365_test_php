@@ -15,11 +15,11 @@
      @if ($errors->has('name')) <div class="help-block cs-error">Sorry you have entered an invalid name</div> @endif
             </div>
   
-     <div class="form-group {{ $errors->has('start_date') ? ' has-error' : '' }}">
+     <div class="form-group {{ $errors->has('date_of_birth') ? ' has-error' : '' }}">
     
          
     <input type="text"  class="form-control datepicker" id="datepicker" name="date_of_birth" placeholder="Enter Date of Birth" value="{{ old('date_of_birth')}}" required>
-     @if ($errors->has('date_of_birth')) <div class="help-block cs-error">Sorry you have entered an incorrect date format. Please use dd/mm/yyyy</div> @endif
+     @if ($errors->has('date_of_birth')) <div class="help-block cs-error">Sorry you have entered an incorrect date format. Please use dd-mm-yyyy</div> @endif
      </div>
   
         <p><button class="btn btn-lg btn-success" type='submit'>Enter</button></p
@@ -30,9 +30,10 @@
 @endsection
 
 @section('additional_scripts')
+
 <script>
   $( function() {
-    $( "#datepicker" ).datepicker({changeYear: true, yearRange: "-100:+100", dateFormat: "dd/mm/yy"});
+    $( "#datepicker" ).datetimepicker({format: "d-m-Y H:i"});
   } );
-  </script>
-  @endsection
+ </script>
+@endsection

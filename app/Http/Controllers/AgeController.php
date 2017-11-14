@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AgeRequest;
-
+use App\Http\Helpers\AgeCalculator;
 
 use Session;
 
@@ -37,8 +37,9 @@ class AgeController extends Controller
      */
     public function calculate(AgeRequest $request)
     {
-
-        var_dump($request->all());
+        //
+        $AgeCalculator = new AgeCalculator();
+        $AgeCalculator->calculateAge($request->input('date_of_birth'));
     }
     
 }

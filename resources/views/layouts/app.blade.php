@@ -21,6 +21,8 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ URL::asset('/css/app.css')}}" rel="stylesheet">
+    
+    <link href="{{ URL::asset('/js/datetimepicker-master/jquery.datetimepicker.css')}}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -43,6 +45,8 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--Implemented jQuery date time picker to allow for hours-->
+<script src="{{ URL::asset('/js/datetimepicker-master/build/jquery.datetimepicker.full.min.js')}}"></script>
 
 @yield('additional_scripts')
   </body>
