@@ -13,12 +13,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
+        //I've modified the users migration to remove login information and add a date of birth
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+            $table->dateTime("date_of_birth");
             $table->timestamps();
         });
     }
