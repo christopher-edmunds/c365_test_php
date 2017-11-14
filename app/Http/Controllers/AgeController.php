@@ -3,21 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AgeRequest;
-use App\Http\Helpers\AgeCalculator;
-
-use Session;
+use App\Http\Library\AgeCalculator;
 
 class AgeController extends Controller
 {
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-    }
 
     /**
      * Show the form.
@@ -40,6 +29,7 @@ class AgeController extends Controller
         //
         $AgeCalculator = new AgeCalculator();
         $AgeCalculator->calculateAge($request->input('date_of_birth'));
+        
     }
     
 }
