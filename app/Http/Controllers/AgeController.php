@@ -28,8 +28,9 @@ class AgeController extends Controller {
     {
         //Pull in all user objects sorted by date of birth
         $users = User::orderBy('date_of_birth','desc')->get();
-
+        //Pull in the flash message to display to the user
         $age_message = session("age_message");
+        //Load the view
         return view('home', ["age_message"=>$age_message, 'users'=>$users, 'age_calculator' =>$this->AgeCalculator]);
     }
     
@@ -49,9 +50,9 @@ class AgeController extends Controller {
         $User = new User();
         //Store the new user
         $User->storeUser(compact('name','date_of_birth'));
-        
+        //Flash the message to show only on next request. 
         $request->session()->flash('age_message', "You are ".$this->AgeCalculator->calculateAge($request->input('date_of_birth')));
-        
+        //Redirect to home
         return redirect("/");
     }
     

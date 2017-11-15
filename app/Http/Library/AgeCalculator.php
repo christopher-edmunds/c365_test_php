@@ -4,7 +4,7 @@ use App\Http\Library\AgeCalculatorInterface;
 
 class AgeCalculator implements AgeCalculatorInterface {
     
-    private $year;
+    private $years;
     private $days;
     private $hours;
     
